@@ -12,4 +12,11 @@ class MovieController extends Controller
     {
       return view('admin.index');
     }
+    
+     public function find()
+  {
+      return redirect('admin/index');
+      
+  }
+    
 }

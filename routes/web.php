@@ -16,15 +16,17 @@ Route::get('/', function () {
 });
 
 Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function() {
-  Route::get('/', 'Admin\MovieController@index');
-  Route::get('create', 'Admin\NewsController@add');
+  Route::get('index', 'Admin\MovieController@index');
+  Route::get('index', 'Admin\MovieController@find');
+  
+  Route::get('create', 'Admin\CreateController@add');
   Route::get('create', 'Admin\CreateController@create');
   
   Route::get('english', 'Admin\EnglishController@next');
-  Route::get('englidsh', 'Admin\EnglishController@edit');
-  Route::get('englidsh', 'Admin\EnglishController@delete');
-  Route::get('englidsh', 'Admin\EnglishController@update');
+  Route::get('english/edit', 'Admin\EnglishController@edit');
+  Route::get('english/delite', 'Admin\EnglishController@delete');
+  Route::get('english', 'Admin\EnglishController@update');
   
-  Route::get('news/edit', 'Admin\TestController@update');
+  Route::get('movie/find', 'Admin\TestController@find');
   Route::get('news/delete', 'Admin\TestController@delete');
 });
