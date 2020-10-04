@@ -18,14 +18,5 @@ class CreateController extends Controller
       
   }
   
-   public function edit()
-  {
-      return redirect('admin.moviename.english.edit');
-      
-  }
   
-  public function update()
-    {
-        return redirect('admin/moviename/english/edit');
-    }
 }

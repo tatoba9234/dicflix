@@ -7,27 +7,28 @@ use App\Http\Controllers\Controller;
 
 class EnglishController extends Controller
 {
-   public function add()
+   public function next()
   {
-      return view('admin.create');
+      return redirect('admin.create');
   }
 
-  public function create()
-  {
-      return redirect('admin/create');
-      
-  }
-  
-   public function edit()
+  public function edit()
   {
       return redirect('admin.moviename.english.edit');
       
   }
   
-  public function update()
-    {
-        return redirect('admin/moviename/english/edit');
-    }
+   public function delete()
+  {
+      return redirect('admin.moviename.english.delete');
+      
+  }
+  
+   public function update()
+  {
+      return redirect('admin.moviename.english');
+      
+  }
   
   
 }
