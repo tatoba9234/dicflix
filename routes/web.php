@@ -15,12 +15,14 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function() {
+Auth::routes();
+
+Route::group(['prefix' => 'admin' ], function() {
   Route::get('index', 'Admin\MovieController@index');
-  Route::get('index', 'Admin\MovieController@find');
+  Route::post('index', 'Admin\MovieController@find');
   
   Route::get('create', 'Admin\CreateController@add');
-  Route::get('create', 'Admin\CreateController@create');
+  Route::post('create', 'Admin\CreateController@create');
   
   Route::get('english', 'Admin\EnglishController@next');
   Route::get('english/edit', 'Admin\EnglishController@edit');
@@ -30,3 +32,6 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function() {
   Route::get('movie/find', 'Admin\TestController@find');
   Route::get('news/delete', 'Admin\TestController@delete');
 });
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

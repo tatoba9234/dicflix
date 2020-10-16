@@ -15,7 +15,7 @@ class MovieController extends Controller
     
      public function find()
   {
-      return redirect('admin/index');
+      return view('admin.index');
       
   }
     
