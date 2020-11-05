@@ -10,13 +10,18 @@ class MovieController extends Controller
     //
     public function index()
     {
-      return view('admin.index');
+      return view('admin.movies');
     }
     
-     public function find()
+     public function search()
   {
-      return view('admin.index');
+      return view('admin.search');
       
   }
     
+       public function find()
+  {
+      return view('admin.find');
+      
+  }
 }

@@ -18,19 +18,26 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::group(['prefix' => 'admin' ], function() {
-  Route::get('index', 'Admin\MovieController@index');
-  Route::post('index', 'Admin\MovieController@find');
+
   
   Route::get('create', 'Admin\CreateController@add');
   Route::post('create', 'Admin\CreateController@create');
   
-  Route::get('english', 'Admin\EnglishController@next');
+  Route::get('english/index', 'Admin\EnglishController@index');
   Route::get('english/edit', 'Admin\EnglishController@edit');
-  Route::get('english/delite', 'Admin\EnglishController@delete');
-  Route::get('english', 'Admin\EnglishController@update');
+  Route::get('english/delete', 'Admin\EnglishController@delete');
   
-  Route::get('movie/find', 'Admin\TestController@find');
-  Route::get('news/delete', 'Admin\TestController@delete');
+  Route::post('moviedetail', 'Admin\MovieController@moviedetail');
+  
+  
+  Route::get('movies', 'Admin\MovieController@index');
+  Route::post('index', 'Admin\MovieController@find');
+  Route::get('find', 'Admin\MovieController@find');
+  Route::get('search', 'Admin\MovieController@search');
+  Route::get('news/delete', 'Admin\MovieController@delete');
+ 
+  Route::get('test', 'Admin\TestController@test');
+  
 });
 Auth::routes();
 

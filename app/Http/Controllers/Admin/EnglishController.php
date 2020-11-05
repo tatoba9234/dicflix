@@ -7,14 +7,17 @@ use App\Http\Controllers\Controller;
 
 class EnglishController extends Controller
 {
-   public function next()
+ 
+
+  
+   public function index()
   {
-      return redirect('admin.create');
+      return view('admin.english.index');
   }
 
   public function edit()
   {
-      return redirect('admin.moviename.english.edit');
+      return edit('admin.moviename.english.edit');
       
   }
   
@@ -27,6 +30,12 @@ class EnglishController extends Controller
    public function update()
   {
       return redirect('admin.moviename.english');
+      
+  }
+  
+  public function moviename()
+  {
+      return view('admin.moviename.index');
       
   }
   

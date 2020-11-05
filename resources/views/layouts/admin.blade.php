@@ -29,40 +29,47 @@
     <body>
         <div id="app">
             {{-- 画面上部に表示するナビゲーションバーです。 --}}
-            <nav class="navbar navbar-expand-md navbar-dark navbar-laravel">
+            <nav class="navbar navbar-light" style="background-color: #3274D3;">
                 <div class="container">
-                    <a class="navbar-brand" href="{{ url('/') }}">
-                        {{ config('app.name', 'dicflix') }}
+                    <a class="navbar-brand" href="{{ url('https://b33bfe4ea09a4318bf9eb3d3e82f8bdc.vfs.cloud9.us-east-2.amazonaws.com/admin/movies') }}">
+                        {{ config('app.name', 'Dicflix') }}
                     </a>
-                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                   <!--<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
-
+                    -->
+                    <btn class="btn btn-outline-success" onclick="location.href='/admin/create'">
+                    logout
+                    </btn> 
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                        <!-- Left Side Of Navbar -->
-                        <ul class="navbar-nav mr-auto">
-
-                        </ul>
+                
+                        
 
                         <!-- Right Side Of Navbar -->
-                        <ul class="navbar-nav ml-auto">
-                        </ul>
+                        <!--<ul class="navbar-nav ml-auto"> -->
+                             
+                        <!--</ul>-->
                     </div>
                     
+        </div>
+                 <div class="container">
+                     <!--onclick="location.href=&quot;{{action('Admin\CreateController@add')}}&quot;-->
+                    <btn class="btn btn-outline-success" onclick="location.href='/admin/create'">
+                        Create
+                    </btn>
+                     <btn class="btn btn-outline-success" onclick="location.href='/admin/english/index'">
+                        English
+                    </btn>
+                     <btn class="btn btn-outline-success" onclick="location.href='/admin/test'">
+                        Test
+                    </btn>
+                    <form class="form-inline">
+                           <input class="form-control mr-sm-2" type="text" placeholder="Search Words">
+                           <button class="btn btn-outline-success" type="submit" onclick="location.href='/admin/find'">search</button>
+                     </form>
+                
                 </div>
-                <div class="container">
-                    <div>
-                        アイウエオ
-                    </div>
-                    <div>
-                        下記くけこ
-                    </div>
-                    <div>
-                        さしすせそ
-                    </div>
-                    <div>
-                        アイウエオ
-                    </div>
+                     
                 </div>
             </nav>
             {{-- ここまでナビゲーションバー --}}
